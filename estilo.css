@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d8a420;
+  color: #17120c;
+}
+
+::selection {
+  background-color: #a3161a;
+  color: #f3ead3;
+}
+
+h2 {
+  font-size: 1.1em;
+  
+}
+
+a, a:active, a:visited, a:hover {
+  color: #17120c;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#contenedorGeneral {
+  margin: auto 1em;
+  text-align: center;
+}
+
+#tituloPagina {
+  margin-top: 1em;
+  margin-bottom: 0;
+  margin-bottom: 0.5em;
+  font-family: "Alfa Slab One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+#tituloPagina:hover a {
+  color: #a3161a;
+  cursor: pointer;
+}
+
+#contenedorPersonaje {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+.imagen {
+  height: 170px;
+  width: 150px;
+  margin: 0em auto;
+  border-left: 6px solid #17120c;
+  border-right: 6px solid #17120c;
+  background-color: #17120c;
+}
+
+#boton {
+  margin-top: 1em;
+  padding: 0.5em 1.2em;
+  font-family: "Alfa Slab One", system-ui;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background-color: #a3161a;
+  color: #f3ead3;
+  border: none;
+  box-shadow: 4px 4px 0 #17120c;
+  cursor: pointer;
