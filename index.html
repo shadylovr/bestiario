@@ -3,37 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/sitio.webmanifest" />
 
     <title>..:: Bestiario Tarantino ::..</title>
-    <!-- <meta name="description" content="Descripción del sitio...." /> -->
 
-    <!-- OpenGraph -->
+<audio id="pista-audio" src="audio/pista.mp3" preload="none" hidden></audio>
+    
     <meta property="og:locale" content="es_CO" />
     <meta property="og:type" content="website" />
-    <!-- Esto importa la hoja de estilos de la página -->
+    
     <link rel="stylesheet" href="estilo.css" />
 
-    <!-- Esto importa el archivo de JavaScript de la página -->
+   
     <script src="script.js" defer></script>
   </head>
   <body>
     <div id="contenedorGeneral">
       <h1 id="tituloPagina">
-        <a href="https://es.wikipedia.org/wiki/Quentin_Tarantino" target="_blank"
-          >Bestiario / Tarantino</a
+         <h1 id="tituloPagina">CHOOSE A MOVIE</h1>
         >
       </h1>
-      <div id="contenedorPersonaje">
-        <img class="imagen" id="top" src="" />
-        <img class="imagen" id="torso" src="" />
-        <img class="imagen" id="abajo" src="" />
+
+      <div id="escenario">
+      
+        <div id="contenedorPersonaje">
+          <img class="imagen" id="top" src="" alt="Top del personaje" />
+          <img class="imagen" id="torso" src="" alt="Torso del personaje" />
+          <img class="imagen" id="abajo" src="" alt="Parte de abajo del personaje" />
+        </div>
+
+        <!-- Cuadro 2: el póster de película -->
+        <div id="contenedorPoster">
+          <img id="poster" src="" alt="Póster de película de Tarantino" />
+        </div>
       </div>
 
-      <button id="boton">Mezclar patadas</button>
+      <button id="boton">Mezclar</button>
+        <audio id="musica" src="song/Pulp Fiction Misirlou - Music & Movie Moments – Christiaan Janssens.mp3" loop autoplay preload="auto"></audio>
     </div>
   </body>
 </html>
