@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="estilo1.css"/>
+  </head>
+<body>
+ 
+<button
+		class="tarantino-boton"
+		type="button"
+		aria-label="Mostrar las 12 fotos y reproducir audio de Tarantino"
+		aria-expanded="false"
+		aria-controls="galeria-fotos">
+		<img src="assets/titulo.png" alt="Written and Directed by Quentin Tarantino">
+		<span> Haz click para Descubrir las fotos</span>
+	</button>
+
+	
+	<p class="estado-audio" aria-live="polite"></p>
+
+	<!-- Galería de 12 fotos (oculta al inicio con hidden) -->
+	<div class="galeria-fotos" id="galeria-fotos" hidden>
+		<img src="assets/p20.jpg" alt="foto1">
+		<img src="assets/p4.jpg" alt="Inglourious Basterds">
+		<img src="assets/p3.jpg" alt="Inglourious Basterds - Shosanna">
+		<img src="assets/p5.jpg" alt="Once Upon a Time in Hollywood - Sharon Tate">
+		<img src="assets/p8.jpg" alt="Jackie Brown">
+		<img src="assets/p6.jpg" alt="Death Proof">
+		<img src="assets/p7.jpg" alt="Once Upon a Time in Hollywood">
+		<img src="assets/p10.jpg" alt="Cuadros en la pared">
+		<img src="assets/p9.jpg" alt="Créditos de Quentin Tarantino">
+		<img src="assets/p18.jpg" alt="Tipografía de Quentin Tarantino">
+		<img src="assets/p11.jpg" alt="Foto 11">
+		<img src="assets/p12.jpg" alt="Foto 12">
+    <img src="assets/p13.jpg" alt="foto1">
+		<img src="assets/p14.jpg" alt="Inglourious Basterds">
+		<img src="assets/p15.jpg" alt="Inglourious Basterds - Shosanna">
+		<img src="assets/p16.jpg" alt="Once Upon a Time in Hollywood - Sharon Tate">
+		<img src="assets/p17.jpg" alt="Jackie Brown">
+		<img src="assets/p18.jpg" alt="Death Proof">
+		<img src="assets/p19.jpg" alt="Once Upon a Time in Hollywood">
+		<img src="assets/p2.jpg" alt="Cuadros en la pared">
+		
+	</div>
+</main>
+
+
+<audio id="tarantino-audio" src="song/Nancy Sinatra - BanG bANg  - Subtítulos Inglés - Español.mp3" preload="none"></audio>
+
+
+<script>
+	const tarantinoButton = document.querySelector(".tarantino-boton");
+	const photoGallery = document.querySelector("#galeria-fotos");
+	const tarantinoAudio = document.querySelector("#tarantino-audio");
+	const audioStatus = document.querySelector(".estado-audio");
+
+	tarantinoButton.addEventListener("click", () => {
+		photoGallery.hidden = false;
+		photoGallery.classList.add("visible");
+		tarantinoButton.setAttribute("aria-expanded", "true");
+		tarantinoAudio.currentTime = 0;
+		tarantinoAudio.play()
+			.then(() => {
+				audioStatus.textContent = "Reproduciendo banda sonora de Tarantino";
+			})
+			.catch((error) => {
+				audioStatus.textContent = "No se pudo reproducir el audio. Inténtalo de nuevo.";
+				console.error("No se pudo reproducir el audio:", error);
+			});
+	});
+</script>

@@ -1,0 +1,114 @@
+@font-face {
+	font-family: titulo;
+	src: url("fonts/");
+}
+
+body {
+	background-color: #000000;
+	color: #b10303fa;
+	
+	text-align: center;
+	margin: 0;
+	padding: 30px 20px;
+}
+
+.bio-tarantino {
+	max-width: 650px;
+	margin: 0 auto 30px;
+}
+
+.bio-tarantino h1 {
+	
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom: 8px;
+}
+
+.bio-tarantino span {
+	display: block;
+	margin-top: 10px;
+	
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+
+.tarantino-boton {
+	background: transparent;
+	border: none;        
+	outline: none;       
+	padding: 0;          
+	cursor: pointer;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.3s ease;
+}
+
+.tarantino-boton:hover {
+	transform: scale(1.02);
+	
+}
+
+.tarantino-boton img {
+	width: 800px;
+	max-width: 85vw;
+	display: block;
+}
+
+.tarantino-boton span {
+	padding: 12px;
+	color: #eac407;
+
+	font-size: 0.85rem;
+	
+	letter-spacing: 1px;
+}
+
+.estado-audio {
+	color: #f30404;
+	font-size: 0.9rem;
+	min-height: 1.2em;
+	margin: 15px 0;
+}
+
+
+.galeria-fotos[hidden] {
+	display: none;
+}
+
+.galeria-fotos.visible {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 16px;
+	max-width: 1200px;
+	margin:100px auto 0;
+	animation: aparecer 0.6s ease forwards;
+}
+
+.galeria-fotos img {
+	width: 105%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	
+	transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.galeria-fotos img:hover {
+	transform: scale(2.04);
+	
+}
+
+@keyframes aparecer {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
