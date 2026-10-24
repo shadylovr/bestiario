@@ -52,7 +52,7 @@
       }
     });
   </script>
-  <script>
+   <script>
     let intentos = 0;
 
     document.getElementById("boton").addEventListener("click", () => {
@@ -64,64 +64,27 @@
         const imgAbajo = document.getElementById("abajo");
         const imgPoster = document.getElementById("poster");
 
-        // Sale entre el clic 3 y el 6 con la misma probabilidad
-        if (intentos >= 6 || (intentos >= 3 && Math.random() < 0.35)) {
-          
-          
-          const ultimoCombo = sessionStorage.getItem("ultimoCombo");
-          let elegirCombo1;
-
-          if (ultimoCombo === "1") {
-            elegirCombo1 = false; // Si acaba de salir el 1, ahora favorece al 2
-          } else if (ultimoCombo === "2") {
-            elegirCombo1 = true;  // Si acaba de salir el 2, ahora favorece al 1
-          } else {
-            elegirCombo1 = Math.random() < 0.5; // Primera vez: 50% y 50% puro
-          }
-
-          if (elegirCombo1) {
-            imgTop.src = "assets/top1.jpg";
-            imgTorso.src = "assets/torsopulp.jpg";
-            imgAbajo.src = "assets/abajopulp.jpg";
-            imgPoster.src = "assets/Pulp Fiction.jpg";
-            sessionStorage.setItem("ultimoCombo", "1");
-          } else {
-            imgTop.src = "assets/top2.jpg";
-            imgTorso.src = "assets/torsok.jpg";
-            imgAbajo.src = "assets/abajok.jpg";
-            imgPoster.src = "assets/posterk.jpg";
-            sessionStorage.setItem("ultimoCombo", "2");
-          }
+        // Sale entre el clic 3 y el 6 con 35% de probabilidad
+        if (intentos >= 12 || (intentos >= 3 && Math.random() < 0.35)) {
+          imgTop.src = "assets/top2.jpg";
+          imgTorso.src = "assets/torsok.jpg";
+          imgAbajo.src = "assets/abajok.jpg";
+          imgPoster.src = "assets/posterk.jpg";
         }
 
-        
         const top = decodeURIComponent(imgTop.getAttribute("src") || "").toLowerCase();
         const torso = decodeURIComponent(imgTorso.getAttribute("src") || "").toLowerCase();
         const abajo = decodeURIComponent(imgAbajo.getAttribute("src") || "").toLowerCase();
         const poster = decodeURIComponent(imgPoster.getAttribute("src") || "").toLowerCase();
 
-        // COMBO 1: Pulp Fiction -> lleva a bio.html
-        const esCombo1 =
-          top.includes("top1.jpg") &&
-          torso.includes("torsopulp.jpg") &&
-          abajo.includes("abajopulp.jpg") &&
-          poster.includes("pulp fiction.jpg");
-
-        // COMBO 2: Kill Bill (K) -> lleva a bio1.html
-        const esCombo2 =
+        // COMBO ÚNICO: Kill Bill (K) -> lleva a bio.html
+        const esComboKillBill =
           top.includes("top2.jpg") &&
           torso.includes("torsok.jpg") &&
           abajo.includes("abajok.jpg") &&
           poster.includes("posterk.jpg");
 
-        
-        if (esCombo1) {
-          sessionStorage.setItem("ultimoCombo", "1");
-          setTimeout(() => {
-            window.location.href = "bio2.html";
-          }, 1000);
-        } else if (esCombo2) {
-          sessionStorage.setItem("ultimoCombo", "2");
+        if (esComboKillBill) {
           setTimeout(() => {
             window.location.href = "bio.html";
           }, 1000);
